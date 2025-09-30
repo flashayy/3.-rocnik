@@ -1,2 +1,11 @@
-# 3.-rocnik
-Repozitár pre úlohy, projekty a poznámky z 3. ročníka strednej školy. Obsahuje prácu s HTML, CSS, PHP a Pythonom – od základov až po praktické príklady a školské zadania.
+# 📚 3. ročník – školské projekty a úlohy
+
+Tento repozitár obsahuje všetky moje materiály zo 3. ročníka strednej školy, zamerané na tieto technológie:
+
+- 🌐 **HTML** – štruktúrovanie webových stránok  
+- 🎨 **CSS** – štýlovanie a dizajn  
+- 🐘 **PHP** – server-side programovanie  
+- 🐍 **Python** – skriptovanie, úlohy a mini projekty  
+
+---
+
