@@ -9,7 +9,7 @@ tasks = [
 def list_tasks():
     my_div = document["tasks"]
     my_div.clear()
-    tab = html.TABLE(Class = "task.table")
+    tab = html.TABLE(Class = "task-table")
     header = html.TR([html.TH("Task"), html.TH("Finished"), html.TH("Priority")])
     tab <= header
     
@@ -22,4 +22,13 @@ def list_tasks():
         
     my_div <= tab
     
-list_tasks
+def add_task(ev):
+    title = document["new_task"].value
+    if title:
+        tasks.append({"title": title, "done": False, "priority": "low"})
+        document["new_task"].value = ""
+        list_tasks()
+    
+document["add_btn"].bind("click", add_task)
+
+list_tasks()
