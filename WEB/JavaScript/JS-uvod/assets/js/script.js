@@ -7,6 +7,6 @@ const text = document.getElementById("text")
 if (btn && text){
     btn.addEventListener("click", () => {
         text.textContent = "Novy obsah, ktory som zmenil cez JS";
+        document.body.classList.toggle("alt-bg");
     })
 }
-
