@@ -1,67 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; text-align: left;">
-  <thead>
-    <tr>
-      <th>Kategória</th>
-      <th>Python</th>
-      <th>JavaScript</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Premenné</td>
-      <td>
-        <p>x = int(5), meno = str("Samuel"), y = float(1.4)</p>
-      </td>
-      <td>
-        <p>let x = 10, const x = 5, var a = 20</p>
-      </td>
-    </tr>
-    <tr>
-      <td>Cyklus</td>
-      <td>
-        <p>for x in range(5): <br> print(x), <br> i = 0 <br>while i > 5 <br>print(i)</p>
-      </td>
-      <td>
-        <p>for (let i = 0; i < 5) {<br>console.log(1); <br>}, <br>for (const x of ), <br>for (const key in obj) {<br>console.log(key), <br>let i = 0; <br>while (i < 5)</p>
-      </td>
-    </tr>
-    <tr>
-      <td>Funkcie</td>
-      <td>
-        <p>def greet(): <br>print("Hello"), <br>def add(a, b): <br>return a + b</p>
-      </td>
-      <td>
-        <!-- JavaScript funkcie -->
-      </td>
-    </tr>
-    <tr>
-      <td>Podmienky</td>
-      <td>
-        <!-- Python podmienky -->
-      </td>
-      <td>
-        <!-- JavaScript podmienky -->
-      </td>
-    </tr>
-    <tr>
-      <td>Polia / Zoznamy</td>
-      <td>
-        <!-- Python list -->
-      </td>
-      <td>
-        <!-- JS array -->
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Kategória</th>
+                <th>Python</th>
+                <th>JavaScript</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Premenné</td>
+                <td>
+                    <pre><code>
+x = int(5)
+
+meno = str("Samuel")
+
+y = float(1.4)
+        </code></pre>
+                </td>
+                <td>
+                    <pre><code>
+let x = 10 
+
+const x = 5
+
+var a = 20
+                    </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Cyklus</td>
+                <td>
+                    <pre><code>
+for x in range(5): 
+    print(x)
+for x in range(1, 20, 4):
+    print(x)
+i = 0 
+    while i > 5: 
+    print(i)
+        </code></pre>
+                </td>
+                <td>
+                    <pre><code>
+for (let i = 0; i < 5) {
+    console.log(1);
+}
+
+for (const x of [1, 2, 3]) {
+    console.log(x);
+}
+
+for (const key in obj) {
+    console.log(key);
+}
+
+let i = 0; while (i < 5)
+        </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Funkcie</td>
+                <td>
+                    <pre><code>
+def greet():
+    print("Hello")
+
+def add(a, b):
+    return a + b
+                    </code></pre>
+                </td>
+                <td>
+                    <pre><code>
+function greet() {
+    console.log("Hello");
+}
+
+cont add = function (a, b) {
+    return a + b;
+}
+
+const add = (a, b) => a + b;
+                    </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Podmienky</td>
+                <td>
+                    <pre><code>
+if x > 5:
+    print("Väčšie")
+
+if x == 0:
+    print("nula")
+elif x > 0:
+    print("pozitivne")
+else:
+    print("negativne")
+                    </code></pre>
+                </td>
+                <td>
+                    <pre><code>
+if (x > 5) {    
+    console.log("väčšie")
+}
+
+if (x === 0) {
+  console.log("zero");
+} else if (x > 0) {
+  console.log("positivne");
+} else {
+  console.log("negativne");
+}
+
+const result = x > 10 ? "yes" : "no";
+                </code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Polia / Zoznamy</td>
+                <td>
+                    <pre><code>
+coords (10, 20)
+
+s = {1, 2, 3}
+
+user = {"name": "Samuel", "age": 17}
+                    </code></pre>
+                </td>
+                <td>
+                    <pre><code>
+const user = { name: "Samuel", age: 17 }
+
+const m = new Map();
+m.set("name", "Samuel");
+
+const s = new Set([1, 2, 3]);
+                    </code></pre>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
+
 </html>
