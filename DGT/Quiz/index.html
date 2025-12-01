@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mini kvíz (Brython)</title>
+<script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js"></script>
+<style>
+
+    :root{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+
+    body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f6f7fb;margin:0;padding:20px}
+
+    .card{background:#fff;padding:24px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.08);max-width:640px;width:100%}
+
+    h1{margin:0 0 8px;font-size:20px}
+
+    .q{margin:18px 0;padding:12px;border-radius:8px;background:#fbfbfd}
+
+    .options{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+
+    label{display:flex;gap:10px;align-items:center;cursor:pointer}
+
+    .result{margin-top:16px;font-weight:600}
+
+    .comment{margin-top:8px;font-style:italic}
+
+    button{margin-top:12px;padding:10px 14px;border-radius:8px;border:0;background:#111827;color:#fff;cursor:pointer}
+
+    button:disabled{opacity:.5;cursor:not-allowed}
+
+    small{color:#6b7280}
+</style>
+</head>
+<body onload="brython()">
+<main class="card" role="main">
+<h1>Mini kvíz (Brython)</h1>
+<p><small>Odpovedzte na všetky otázky a stlačte „Vyhodnoť“.</small></p>
+ 
+    <form id="quizForm">
+<section class="q" aria-labelledby="q1">
+<div id="q1"><strong>1) V akom filme hrá postava Forrest Gump?</strong></div>
+<div class="options">
+<label><input type="radio" name="q1" value="A"> A) The Matrix</label>
+<label><input type="radio" name="q1" value="B"> B) Forrest Gump</label>
+<label><input type="radio" name="q1" value="C"> C) Inception</label>
+</div>
+</section>
+ 
+      <section class="q" aria-labelledby="q2">
+<div id="q2"><strong>2) Koľko hráčov má tím v klasickom futbale (na ihrisku)?</strong></div>
+<div class="options">
+<label><input type="radio" name="q2" value="A"> A) 11</label>
+<label><input type="radio" name="q2" value="B"> B) 7</label>
+<label><input type="radio" name="q2" value="C"> C) 5</label>
+</div>
+</section>
+ 
+      <section class="q" aria-labelledby="q3">
+<div id="q3"><strong>3) Ktorý jazyk sa bežne používa na webové skriptovanie na strane klienta?</strong></div>
+<div class="options">
+<label><input type="radio" name="q3" value="A"> A) JavaScript</label>
+<label><input type="radio" name="q3" value="B"> B) Python</label>
+<label><input type="radio" name="q3" value="C"> C) C++</label>
+</div>
+</section>
+ 
+      <button type="button" id="evaluateBtn">Vyhodnoť</button>
+</form>
+ 
+    <div id="output" class="result" aria-live="polite"></div>
+<div id="comment" class="comment"></div>
+</main>
+ 
+  <script type="text/python">
+
+from browser import document, alert
+ 
+CORRECT = {'q1': 'B', 'q2': 'A', 'q3': 'A'}
+ 
+def get_answer(qname):
+
+    sel = document.select(f'input[name="{qname}"]:checked')
+
+    if sel:
+
+        return sel[0].attrs['value']
+
+    return None
+ 
+def evaluate(ev):
+
+    answers = {}
+
+    for k in CORRECT.keys():
+
+        answers[k] = get_answer(k)
+ 
+    # check all answered
+
+    for k, v in answers.items():
+
+        if not v:
+
+            alert('Odpovedzte, prosím, na všetky otázky.')
+
+            return
+ 
+    score = sum(1 for k in CORRECT if answers[k] == CORRECT[k])
+
+    output = document['output']
+
+    comment = document['comment']
+
+    output.text = f'Správne máš {score} z {len(CORRECT)} otázok'
+ 
+    if score <= 1:
+
+        comment.text = 'Skús znova.'
+
+    elif score == 2:
+
+        comment.text = 'Dobre — máš pekný výsledok.'
+
+    else:
+
+        comment.text = 'Výborne! Všetko správne.'
+ 
+# bind button
+
+btn = document['evaluateBtn']
+
+btn.bind('click', evaluate)
+</script>
+</body>
+</html>
+
+ 
