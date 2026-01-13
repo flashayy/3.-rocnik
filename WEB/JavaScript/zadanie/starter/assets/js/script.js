@@ -1,45 +1,55 @@
 // ===================================
-// ÚLOHA 1: Základné údaje 
+// ÚLOHA 1: Základné údaje
 // ===================================
-const meno = "Samuel";
-const priezvisko = "Tvoje Priezvisko";
-const vek = 20; // Tvoj vek ako číslo
 
+// údaje
+const menoText = "Samuel";
+const vekCislo = 17;
+const skolaText = "Piaristická stredná odborná škola F. Hanáka";
+const konicekText = "programovanie";
 
-
-
-
-// ===================================
-// ÚLOHA 2: Zobrazenie údajov 
-// ===================================
-// Použi textContent na zobrazenie všetkých 4 údajov v jednotlivých elementoch
-//
-
-
+// elementy z HTML
+const menoEl = document.getElementById("meno");
+const vekEl = document.getElementById("vek");
+const skolaEl = document.getElementById("skola");
+const konicekEl = document.getElementById("konicek");
 
 
 // ===================================
-// ÚLOHA 3: Zmena farieb (6 bodov)
+// ÚLOHA 2: Zobrazenie údajov
 // ===================================
-// 1. Najdi id tlačidla tak aby si s ním mohol pracovať, a tiež element, ktorých ich všetky obaľuje, aby si mu mohol zmeniť farbu orámovania
-// 2. Pridaj mu event listener nech reaguje na udalosť 'click'
-// 3. Pri kliknutí prepni triedu 'zmenene-farby' na elemente s triedou .container 
-//    Použiješ: classList.toggle("zmenene-farby");
 
+menoEl.textContent = menoText;
+vekEl.textContent = vekCislo;
+skolaEl.textContent = skolaText;
+konicekEl.textContent = konicekText;
+
+
+// ===================================
+// ÚLOHA 3: Zmena farieb
+// ===================================
+
+const tlacidlo = document.getElementById("btn-zmena");
+const container = document.querySelector(".container");
+
+tlacidlo.addEventListener("click", function () {
+    container.classList.toggle("zmenene-farby");
+
+    // BONUS – zmena textu tlačidla
+    if (container.classList.contains("zmenene-farby")) {
+        tlacidlo.textContent = "Pôvodné farby";
+    } else {
+        tlacidlo.textContent = "Zmeniť farby";
+    }
+});
 
 
 // ===================================
 // ÚLOHA 4: Výpočet roku narodenia
 // ===================================
-// Vypočítaj rok narodenia,u lož do premennej, zobraz do elementu 
 
+const aktualnyRok = new Date().getFullYear();
+const rokNarodenia = aktualnyRok - vekCislo;
 
-
-
-// ===================================
-// BONUS: Zmena textu tlačidla (4 body)
-// ===================================
-// Voliteľné 
-// Zmeň text tlačidla z "Zmeniť farby" na "Pôvodné farby" a naspäť
-
-
+const rokNarodeniaEl = document.getElementById("rok-narodenia");
+rokNarodeniaEl.textContent = rokNarodenia;
