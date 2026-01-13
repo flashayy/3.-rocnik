@@ -1,9 +1,11 @@
 // ===================================
 // ÚLOHA 1: Základné údaje 
 // ===================================
-// Vytvor 4 premenné podľa toho, kde v akom elemente sa majú vypísať
-// Daj si do premenných aj elementy, s ktorými budeš pracovaťm vytiahni si ich podľa ID
-// 
+const meno = "Samuel";
+const priezvisko = "Tvoje Priezvisko";
+const vek = 20; // Tvoj vek ako číslo
+
+
 
 
 
