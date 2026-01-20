@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BMI Kalkulačka</title>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    
 
-    <script src="assets/js/script.js"></script>
+<div class="container">
+    <header>
+        <h1>BMI Kalkulačka</h1>
+    </header>
+
+    <main class="bmi-calculator">
+        <div class="bmi-form">
+
+            <div class="form-row">
+                <label for="weight">Hmotnosť (kg):</label>
+                <input type="number" id="weight" placeholder="Zadajte svoju hmotnosť">
+            </div>
+
+            <div class="form-row">
+                <label for="height">Výška (m):</label>
+                <input type="number" id="height" placeholder="Zadajte svoju výšku">
+            </div>
+
+            <!-- BUTTON napojený na JS -->
+            <button onclick="calculateBMI()">Vypočítať BMI</button>
+
+        </div>
+
+        <!-- ID MUSÍ sedieť s JS -->
+        <div class="bmi-result" id="result">
+            Vaše BMI sa zobrazí tu.
+        </div>
+    </main>
+</div>
+
+<script src="assets/js/script.js"></script>
 </body>
 </html>
