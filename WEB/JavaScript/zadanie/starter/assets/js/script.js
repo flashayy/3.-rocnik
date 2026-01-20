@@ -3,7 +3,7 @@
 // ===================================
 
 // údaje
-const menoText = "Samuel";
+const menoText = "Samuel Michalik";
 const vekCislo = 17;
 const skolaText = "Piaristická stredná odborná škola F. Hanáka";
 const konicekText = "programovanie";
