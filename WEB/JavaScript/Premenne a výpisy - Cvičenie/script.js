@@ -130,3 +130,6 @@ if (dlzkaVety1 > dlzkaVety2) {
 } else if (dlzkaVety2 > dlzkaVety1) {
     console.log(`Dlhšia veta je: "${veta2}"`);
 }
+else {
+    console.log("Obe vety majú rovnakú dĺžku.");
+}
