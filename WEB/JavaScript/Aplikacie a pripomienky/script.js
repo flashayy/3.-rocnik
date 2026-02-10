@@ -16,4 +16,4 @@ addBtn.addEventListener('click', () => {
 
 if (!taskText) return;
 
-
+let listItem = document.createElement('li');
