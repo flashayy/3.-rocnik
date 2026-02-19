@@ -15,13 +15,13 @@
             <!-- Meno -->
             <div class="form-group">
                 <label for="meno">Meno a priezvisko</label>
-                <input type="text" id="meno" placeholder="Zadajte vaše meno" required>
+                <input type="text" id="meno" name="meno" placeholder="Zadajte vaše meno" autocomplete="name" required>
             </div>
 
             <!-- Email -->
             <div class="form-group">
                 <label for="email">Emailová adresa</label>
-                <input type="email" id="email" placeholder="vas@email.sk" required>
+                <input type="email" id="email" name="email" placeholder="vas@email.sk" autocomplete="email" required>
             </div>
 
             <!-- Témy -->
@@ -65,7 +65,7 @@
                         <span>Webdizajn</span>
                     </label>
                 </div>
-                <input type="text" id="ineOblasti" placeholder="Iné (napíš vlastnú oblasť)">
+                <input type="text" id="ineOblasti" name="ineOblasti" placeholder="Iné (napíš vlastnú oblasť)" autocomplete="off">
             </div>
 
             <!-- Tlačidlo -->
@@ -73,7 +73,11 @@
         </form>
 
         <!-- Miesto pre výsledok/error -->
-        <div id="sprava" class="sprava hidden"></div>
+        <div id="sprava" class="sprava hidden" role="status" aria-live="polite">
+            <h2 id="spravaNadpis" class="sprava-nadpis"></h2>
+            <p id="spravaText" class="sprava-text"></p>
+            <ul id="spravaZoznam" class="sprava-zoznam"></ul>
+        </div>
     </div>
 
     <script src="assets/js/script.js"></script>
