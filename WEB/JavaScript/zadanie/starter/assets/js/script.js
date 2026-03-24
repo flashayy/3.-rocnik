@@ -53,3 +53,4 @@ const rokNarodenia = aktualnyRok - vekCislo;
 
 const rokNarodeniaEl = document.getElementById("rok-narodenia");
 rokNarodeniaEl.textContent = rokNarodenia;
+
