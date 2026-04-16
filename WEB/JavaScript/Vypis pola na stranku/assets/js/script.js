@@ -6,16 +6,8 @@ const vypisNeparneCisla = document.getElementById("vypisNeparneCisla");
 
 vypisCelePole.textContent = pole.join(", ");
 
-let parneCisla = [];
-let neparneCisla = [];
-
-for (let i = 0; i < pole.length; i++) {
-  if (pole[i] % 2 === 0) {
-    parneCisla.push(pole[i]);
-  } else {
-    neparneCisla.push(pole[i]);
-  }
-}
+const parneCisla = pole.filter(cislo => cislo % 2 === 0);
+const neparneCisla = pole.filter(cislo => cislo % 2 !== 0);
 
 vypisParneCisla.textContent = parneCisla.join(", ");
 vypisNeparneCisla.textContent = neparneCisla.join(", ");
